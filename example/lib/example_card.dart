@@ -32,10 +32,9 @@ class ExampleCard extends StatelessWidget {
           Flexible(
             child: Container(
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: candidate.color,
+                image: DecorationImage(
+                  image: AssetImage(candidate.imagePath),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -60,11 +59,6 @@ class ExampleCard extends StatelessWidget {
                     color: Colors.grey,
                     fontSize: 15,
                   ),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  candidate.city,
-                  style: const TextStyle(color: Colors.grey),
                 ),
               ],
             ),

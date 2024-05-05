@@ -9,9 +9,24 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  audioplayers: ^6.0.0
+  card_swiper: ^3.0.1
   flutter:
     sdk: flutter
-
+  just_audio: ^0.9.37
+  http:
+  process_run:
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  path_provider: ^2.0.2
+  cupertino_icons: ^1.0.2
+  image_picker: ^0.8.7+5
+  image_cropper: ^6.0.0
+  external_path:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -19,3 +34,12 @@ dev_dependencies:
 screenshots:
   - description: "Example of the widget."
     path: images/swiping.gif
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/2Pac/
+    - assets/Eminem/
+    - assets/Kiss/
+    - assets/Selena Gomez/

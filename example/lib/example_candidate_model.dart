@@ -1,42 +1,58 @@
-import 'package:flutter/cupertino.dart';
 
 class ExampleCandidateModel {
   final String name;
   final String job;
-  final String city;
-  final List<Color> color;
+  final String imagePath;
+  final String musicPath; // New field for storing the path to the music file
 
   ExampleCandidateModel({
     required this.name,
     required this.job,
-    required this.city,
-    required this.color,
+    required this.imagePath,
+    required this.musicPath, // Updated constructor to include musicPath
   });
 }
+class candidate_transform{
+  late Map<String,dynamic> data;
+  List<ExampleCandidateModel> transform(data){
 
-final List<ExampleCandidateModel> candidates = [
-  ExampleCandidateModel(
-    name: 'One, 1',
-    job: 'Developer',
-    city: 'Areado',
-    color: const [Color(0xFFFF3868), Color(0xFFFFB49A)],
-  ),
-  ExampleCandidateModel(
-    name: 'Two, 2',
-    job: 'Manager',
-    city: 'New York',
-    color: const [Color(0xFF736EFE), Color(0xFF62E4EC)],
-  ),
-  ExampleCandidateModel(
-    name: 'Three, 3',
-    job: 'Engineer',
-    city: 'London',
-    color: const [Color(0xFF2F80ED), Color(0xFF56CCF2)],
-  ),
-  ExampleCandidateModel(
-    name: 'Four, 4',
-    job: 'Designer',
-    city: 'Tokyo',
-    color: const [Color(0xFF0BA4E0), Color(0xFFA9E4BD)],
-  ),
+    return data.map((data) {
+      return ExampleCandidateModel(
+        name: data[0],
+        job: data[1],
+        imagePath: 'assets/${data[0]}/${data[0]}.png',
+        musicPath:
+        "assets/${data[0]}/${data[1]}.wav", // Adjusted to include music path
+      );
+    }).toList();
+  }
+}
+final List<List<String>> newData = [
+  ['Eminem', 'Without Me'], // Added music file names
+  ['Selena Gomez', 'Wolver'],
+  ['Kiss', "I Was Made For Lovin' You"],
+  ['2Pac', 'Hit Em Up']
 ];
+
+/*final List<ExampleCandidateModel> newCandidates = newData.map((data) {
+  return ExampleCandidateModel(
+    name: data[0],
+    job: data[1],
+    imagePath: 'assets/${data[0]}/${data[0]}.png',
+    musicPath:
+        "assets/${data[0]}/${data[1]}.wav", // Adjusted to include music path
+  );
+}).toList();*/
+
+// Function to play music
+void playMusic(String musicPath) {
+  // Code to play music from the given path
+}
+
+// Example usage:
+/*void main() {
+  // Play music for each candidate
+  for (var candidate in newCandidates) {
+    playMusic(candidate.musicPath);
+  }
+}*/

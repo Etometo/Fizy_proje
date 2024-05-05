@@ -1,6 +1,5 @@
 name: example
 description: Example for the flutter_card_swiper
-
 publish_to: "none"
 version: 0.0.1
 
@@ -12,6 +11,15 @@ dependencies:
     sdk: flutter
   flutter_card_swiper:
     path: ../
+  just_audio: ^0.9.37
+  audioplayers:
 
 flutter:
   uses-material-design: true
+  assets:
+    - images/
+    - assets/
+    - assets/2Pac/
+    - assets/Eminem/
+    - assets/Kiss/
+    - assets/Selena Gomez/

@@ -1,0 +1,28 @@
+class ExampleCandidateModel {
+  final String name;
+  final String job;
+  final String imagePath; // Yeni eklenen alan
+  // final List<Color> color;
+
+  ExampleCandidateModel({
+    required this.name,
+    required this.job,
+    required this.imagePath, // Yeni eklenen alan
+    //required this.color,
+  });
+}
+
+final List<List<String>> newData = [
+  ['Eminem', 'Without Me'],
+  ['Selena Gomez', 'Wolver'],
+  ['Kiss', "I Was Made For Lovin' You"],
+  ['2Pac', 'Hit Em Up'],
+];
+
+final List<ExampleCandidateModel> newCandidates = newData.map((data) {
+  return ExampleCandidateModel(
+    name: data[0],
+    job: data[1],
+    imagePath: 'assets/${data[0]}/${data[0]}.png',
+  );
+}).toList();
